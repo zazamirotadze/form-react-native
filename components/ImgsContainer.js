@@ -1,0 +1,44 @@
+import React from 'react'
+import { View, TouchableWithoutFeedback, Image, StyleSheet, Text } from 'react-native'
+import colors from './colors'
+const LogoImage = require('../assets/camera.png')
+
+
+const ImgsContainer = ({images,showPopup, pickImage, errors}) => {
+
+  return (
+    <View style={styles.imgsContainer}>
+            {images.map((imageEl)=>
+              <TouchableWithoutFeedback key={imageEl.id}  onPress={()=>showPopup(imageEl.id)}>
+                <Image style={styles.image} source={imageEl.source}/> 
+              </TouchableWithoutFeedback> )}
+            <View >
+              <TouchableWithoutFeedback onPress={pickImage}>
+                <Image source={LogoImage} style={styles.image}   />
+              </TouchableWithoutFeedback>
+              { errors.imageError && <Text style={styles.text} >Please select at least one image</Text>} 
+            </View>
+          </View>
+  )
+}
+
+export default ImgsContainer
+
+const styles = StyleSheet.create({
+    imgsContainer:{
+        width:"92%",
+        flexDirection: "row",
+        flexWrap:"wrap",
+    },
+    image:{
+      margin:4,
+      width: 85, 
+      height: 85,
+      borderRadius:10
+    },
+    text:{
+      color: colors.red,
+      fontWeight:"bold"
+    }
+  
+  })
