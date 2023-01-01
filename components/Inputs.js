@@ -41,6 +41,7 @@ const Inputs = ({errors, formData, setFormData}) => {
 
 const styles = StyleSheet.create({
   input: {
+    
     marginTop:15,
     borderWidth: 1,
     paddingTop:20,
@@ -55,7 +56,9 @@ const styles = StyleSheet.create({
   },
   inputContainer:{
     width:"92%",
-    marginTop:5
+    marginTop:5,
+    alignSelf:"center"
+    
   },
   text:{
     color:colors.red,
@@ -65,3 +68,4 @@ const styles = StyleSheet.create({
 });
 
 export default Inputs;
+

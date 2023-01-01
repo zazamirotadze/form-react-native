@@ -154,7 +154,6 @@ export default function ImagePickerExample() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems:'center',
     paddingTop:24,
     backgroundColor: colors.white
   },

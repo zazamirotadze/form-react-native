@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     borderRadius:40,
     justifyContent:"center",
     alignItems:"center",
-    marginTop:25
+    marginTop:25,
+    alignSelf:"center"
   },
   btnText:{
     color:colors.white,
